@@ -44,7 +44,7 @@ class Kernel
         try {
 
             $routing = include __DIR__ . '/../app/routing.php';
-            $router = new Router1($this->request, $routing);
+            $router = new Router($this->request, $routing);
 
             return $this->container->call($router->getController(), $router->getAction(), $router->getParameters());
         } catch (ResourceNotFoundException $e) {
